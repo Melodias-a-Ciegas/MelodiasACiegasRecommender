@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics.pairwise import cosine_similarity
 from sqlalchemy import func
 
-def get_recommendations(user_id: int, db: Session, alpha: float = 0.1, default_difficulty: float = 3.0, top_n: int = 10):
+def get_recommendations(user_id: int, db: Session, alpha: float = 0.1, default_difficulty: float = 3.0, top_n: int = 5):
     # 1. Cargar datos de Cancion_Info desde la base de datos
     canciones = db.query(CancionInfo).all()
     if not canciones:
